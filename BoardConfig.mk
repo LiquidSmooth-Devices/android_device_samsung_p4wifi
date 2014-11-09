@@ -16,6 +16,8 @@
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+COMMON_GLOBAL_CFLAGS += -Wno-error=strict-aliasing
+
 # Include p4-common
 -include device/samsung/p4-common/BoardConfigCommon.mk
 
@@ -28,6 +30,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 14472970240
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/p4
 TARGET_KERNEL_CONFIG := cyanogenmod_samsung_p4wifi-jb_defconfig
+TARGET_CPU_VARIANT:=tegra2
 # Keep this as a fallback
 TARGET_PREBUILT_KERNEL := device/samsung/p4wifi/kernel
 
